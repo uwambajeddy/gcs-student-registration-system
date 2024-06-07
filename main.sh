@@ -1,35 +1,37 @@
 #!/usr/bin/env bash
 
+green='\033[0;32m'
 orange='\033[0;33m'
+red='\033[0;31m'
 reset='\033[0m'
 
 # Function to print text in light blue color
-print_light_blue() {
+print_orange() {
   local text="$1"
   echo -e "${orange}${text}${reset}"
 }
 
 # function for application loader
 function load {
-  for i in {1..10}; do
-    echo -n "."
-    sleep 0.1
+  for i in {1..57}; do
+    echo -n "${green}.${reset}"
+    sleep 0.2
   done
-  echo -e "100%\n"
+  echo -e "${green}100%${reset}\n"
 } 
 
 
 echo -e "\n\n"
-print_light_blue "███╗   ██╗███████╗ ██████╗ ██████╗  ██████╗ ██████╗      ██╗██████╗ "
-print_light_blue "████╗  ██║██╔════╝██╔════╝ ██╔══██╗██╔═══██╗██╔══██╗    ███║╚════██╗"
-print_light_blue "██╔██╗ ██║█████╗  ██║  ███╗██████╔╝██║   ██║██║  ██║    ╚██║ █████╔╝"
-print_light_blue "██║╚██╗██║██╔══╝  ██║   ██║██╔═══╝ ██║   ██║██║  ██║     ██║██╔═══╝ "
-print_light_blue "██║ ╚████║███████╗╚██████╔╝██║     ╚██████╔╝██████╔╝     ██║███████╗"
-print_light_blue "╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝      ╚═════╝ ╚═════╝      ╚═╝╚══════╝"
-echo 
-echo "\n"
+print_orange "███╗   ██╗███████╗ ██████╗ ██████╗  ██████╗ ██████╗      ██╗██████╗ "
+print_orange "████╗  ██║██╔════╝██╔════╝ ██╔══██╗██╔═══██╗██╔══██╗    ███║╚════██╗"
+print_orange "██╔██╗ ██║█████╗  ██║  ███╗██████╔╝██║   ██║██║  ██║    ╚██║ █████╔╝"
+print_orange "██║╚██╗██║██╔══╝  ██║   ██║██╔═══╝ ██║   ██║██║  ██║     ██║██╔═══╝ "
+print_orange "██║ ╚████║███████╗╚██████╔╝██║     ╚██████╔╝██████╔╝     ██║███████╗"
+print_orange "╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝      ╚═════╝ ╚═════╝      ╚═╝╚══════╝"
+echo
+echo -e "\n"
 
-echo -n "Loading"
+echo -n "${green}Loading${reset}"
 load
 
 export file_path="Students-list_1023.txt"
@@ -55,7 +57,7 @@ function register {
     # use grep to search if student id column exists
     if grep -E "^\|[[:space:]]*$id[[:space:]]*\|" $file_path; then
       # message notification
-      echo -e "\n\n****The student Id Already Exists***\n"
+      echo -e "\n\n${orange}****The student Id Already Exists***${reset}\n"
       # restart app for the user to enter new data
       sleep 2
       clear
@@ -65,7 +67,7 @@ function register {
       printf "| %-25s | %-26s | %-36s |\n" "$id" "$age" "$email" >> $file_path
       printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
       # loading message
-      echo -n "opening preview loading ";
+      echo -n "${green}opening preview loading${reset} ";
       load
       # end of loading
       cat $file_path
@@ -76,7 +78,7 @@ function register {
       ./main.sh
     fi
   else
-    echo -e "\n\n**************** This is Not A valid ALU Student Email ****************\n\n"
+    echo -e "\n\n${orange}**************** This is Not A valid ALU Student Email ****************${reset}\n\n"
     # call the register function if invalid email to allow the user to input again
     register
   fi
@@ -95,7 +97,7 @@ function view_student {
       # and also call restart the app for user to choose other
       ./main.sh
     else
-      echo "No Student Found. Try Adding New Students."
+      echo "${red}No Student Found. Try Adding New Students.${reset}"
       echo -e "\n\n **** returning to Home **** \n\n"
       # call the load function
       load
@@ -104,7 +106,7 @@ function view_student {
       ./main.sh
     fi
   else
-    echo "File Not Found."
+    echo "${red}File Not Found.${reset}"
     echo -e "\n\n **** returning to Home **** \n\n"
     load
     clear
@@ -140,7 +142,7 @@ function update_student {
         done < "$file_path"
         
         if [ "$found" = false ]; then
-          echo "Student ID: $id not found in the file."
+          echo "${red}Student ID: $id not found in the file.${reset}"
           echo -e "\n\n **** returning to Home **** \n\n"
           load
           # end of loading
@@ -148,7 +150,7 @@ function update_student {
           ./main.sh
         else
           mv "$temp_file" "$file_path"
-          echo "Successfully Edited Student with ID: $id"
+          echo "${green}Successfully Edited Student with ID: $id${reset}"
           echo -e "\n\n **** Preparing Your Preview **** \n\n"
           load
           # end of loading
@@ -156,11 +158,11 @@ function update_student {
           view_student
         fi
       else
-        echo -e "\n\n**************** This is Not A valid ALU Student Email ****************\n\n"
+        echo -e "\n\n${orange}**************** This is Not A valid ALU Student Email ****************${reset}\n\n"
         update_student
       fi
     else
-      echo "Error: Student Id Doesn't exist: $id"
+      echo "${red}Error: Student Id Doesn't exist: $id${reset}"
       echo -e "\n\n **** returning to Home **** \n\n"
       load
       # end of loading
@@ -168,7 +170,7 @@ function update_student {
       ./main.sh
     fi
   else
-    echo "Error: File not found : $file_path"
+    echo "${red}Error: File not found : $file_path${reset}"
     echo -e "\n\n **** returning to Home **** \n\n"
     load
     # end of loading
@@ -191,7 +193,7 @@ function delete_student {
             # Delete the line that matched the search and the next line
             sed -i "${line_num}d;$(($line_num+1))d" "$file_path"
         done
-        echo "Deleted row with Student ID: $id"
+        echo "${green}Deleted row with Student ID: $id${reset}"
 
         echo -e "\n\n **** Preparing Your Preview **** \n\n"
         load
@@ -199,7 +201,7 @@ function delete_student {
         clear
         view_student
     else
-        echo "Error: File not found at path: $file_path"
+         echo "${red}Error: File not found : $file_path${reset}"
         echo -e "\n\n **** returning to Home ****\n\n"
         load
         # End of loading 
@@ -210,7 +212,7 @@ function delete_student {
 
 #------------------------function to save in new file ------------------------------
 function email_save {
-    echo -n "Saving Emails in ASC"
+    echo -n "${green}Saving Emails in ASC${reset}"
     sleep 0.6
     clear
     ./select-emails.sh
@@ -221,7 +223,7 @@ emails='student-emails.txt'
 #------------------------function to view emails in ASC order-----------------------
 function view_email {
     # Loading message
-    echo -n "Opening Emails preview in ASC Order"
+    echo -n "${green}Opening Emails preview in ASC Order${reset}"
     load
     # End of loading
     cat "$emails"
@@ -247,7 +249,7 @@ function back_up {
 #------------------------function to exit program---------------
 function exit_main {
     # Send message for closing app
-    echo -n "Closing App. Please wait for a few seconds to finish..."
+    echo -n "${green}Closing App. Please wait for a few seconds to finish...${reset}"
     sleep 0.6
     clear
     # Kill the main process
@@ -255,8 +257,8 @@ function exit_main {
 }
 
 # App menu
-echo -e "\n\n*******************************************************"
-echo -e "****************** Student Management System *****************"
+echo -e "\n\n *******************************************************"
+print_orange "************* Student Management System ***************"
 echo -e "*******************************************************\n"
 
 echo -e "What would you like to do today?\n"
@@ -309,7 +311,7 @@ case $choice in
         exit_main
         ;;
     *)
-        echo "Invalid choice. Please try again."
+        echo "${red}Invalid choice. Please try again.${reset}"
         ./main.sh
         ;;
 esac
