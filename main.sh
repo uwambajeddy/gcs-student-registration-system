@@ -6,7 +6,7 @@ reset='\033[0m'
 # Function to print text in light blue color
 print_light_blue() {
   local text="$1"
-  echo -e "${light_blue}${text}${reset}"
+  echo -e "${orange}${text}${reset}"
 }
 
 # function for application loader
