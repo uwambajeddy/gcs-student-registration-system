@@ -32,6 +32,7 @@ print_light_blue "|__/  \__/ \_______/ \____  $$|__/      \______/  \_______/   
 print_light_blue "                     /$$  \ $$                                                     "
 print_light_blue "                    |  $$$$$$/                                                     "
 print_light_blue "                     \______/                                                      "
+echo
 
 echo -n "Loading"
 load
