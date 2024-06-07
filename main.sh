@@ -14,8 +14,8 @@ print_orange() {
 # function for application loader
 function load {
   for i in {1..57}; do
-    echo -n "${green}.${reset}"
-    sleep 0.2
+    echo -n "."
+    sleep 0.1
   done
   echo -e "${green}100%${reset}\n"
 } 
@@ -257,7 +257,7 @@ function exit_main {
 }
 
 # App menu
-echo -e "\n\n *******************************************************"
+echo -e "\n\n*******************************************************"
 print_orange "************* Student Management System ***************"
 echo -e "*******************************************************\n"
 
