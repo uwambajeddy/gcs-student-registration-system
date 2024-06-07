@@ -27,7 +27,7 @@ if [ -f "$s_email" ] && [ -f "$main" ] && [ -f "$file_path" ] && [ -f "$file_sav
         mv -f "$main" "$s_email" "$file_save" "$file_path" "$folder"
         echo -n "Backing up data to alu-cod.online "
         load
-        ./backup-Negpod_17.sh
+        ./backup-Negpod_12.sh
     else
         echo -n "Creating directory "
         load
@@ -38,7 +38,7 @@ if [ -f "$s_email" ] && [ -f "$main" ] && [ -f "$file_path" ] && [ -f "$file_sav
         mv -f "$main" "$s_email" "$file_save" "$file_path" "$folder"
         echo -n "Backing up data to alu-cod.online "
         load
-        ./backup-Negpod_17.sh
+        ./backup-Negpod_12.sh
     fi
 else
     echo "Error: Your Files Don't Exist"

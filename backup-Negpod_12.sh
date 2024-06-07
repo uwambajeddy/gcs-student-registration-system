@@ -10,7 +10,7 @@ function load {
 }
 
 # Configuration for variables
-source_directory="negpod_17-q1"
+source_directory="negpod_12-q1"
 username="64293e56bc62"
 host="64293e56bc62.3a2627c1.alu-cod.online"
 password="328d3b338a4ced526c9a"
