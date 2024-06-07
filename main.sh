@@ -11,7 +11,7 @@ function load {
 
 echo -e "\n\n***************** Welcome To Our Student Management App ***************\n"
 
-echo -n "starting App"
+echo -n "Loading"
 load
 
 export file_path="Students-list_1023.txt"
