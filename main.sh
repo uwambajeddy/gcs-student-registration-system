@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+# Define gradient colors
+colors=(31 32 33 34 35 36 37)
+
+# Function to print text with gradient effect
+print_gradient() {
+  local text="$1"
+  local length=${#text}
+  for ((i=0; i<length; i++)); do
+    local char="${text:i:1}"
+    local color=${colors[i % ${#colors[@]}]}
+    echo -ne "\033[${color}m${char}\033[0m"
+  done
+  echo
+}
+
 # function for application loader
 function load {
   for i in {1..10}; do
@@ -9,7 +24,13 @@ function load {
   echo -e "100%\n"
 } 
 
-echo -e "\n\n***************** Welcome To Our Student Management App ***************\n"
+echo -e "\n\n***************** Negpod 12 ***************\n"
+print_gradient " _   _              ____           _  ____  ___ "
+print_gradient "| \\ | |  ___   ___ |  _ \\   __ _  (_)|  _ \\|_ _|"
+print_gradient "|  \\| | / _ \\ / _ \\| | | | / _\` | | || |_) || | "
+print_gradient "| |\\  ||  __/|  __/| |_| || (_| | | ||  __/ | | "
+print_gradient "|_| \\_| \\___| \\___||____/  \\__,_| |_||_|   |___|"
+echo
 
 echo -n "Loading"
 load
@@ -238,7 +259,7 @@ function exit_main {
 
 # App menu
 echo -e "\n\n*******************************************************"
-echo -e "****************** Welcome to our App *****************"
+echo -e "****************** Student Management System *****************"
 echo -e "*******************************************************\n"
 
 echo -e "What would you like to do today?\n"
