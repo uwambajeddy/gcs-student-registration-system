@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 
-# Define gradient colors
-colors=(31 32 33 34 35 36 37)
+light_blue='\033[1;34m'
+reset='\033[0m'
 
-# Function to print text with gradient effect
-print_gradient() {
+# Function to print text in light blue color
+print_light_blue() {
   local text="$1"
-  local length=${#text}
-  for ((i=0; i<length; i++)); do
-    local char="${text:i:1}"
-    local color=${colors[i % ${#colors[@]}]}
-    echo -ne "\033[${color}m${char}\033[0m"
-  done
-  echo
+  echo -e "${light_blue}${text}${reset}"
 }
 
 # function for application loader
@@ -25,11 +19,11 @@ function load {
 } 
 
 echo -e "\n\n***************** Negpod 12 ***************\n"
-print_gradient " _   _              ____           _  ____  ___ "
-print_gradient "| \\ | |  ___   ___ |  _ \\   __ _  (_)|  _ \\|_ _|"
-print_gradient "|  \\| | / _ \\ / _ \\| | | | / _\` | | || |_) || | "
-print_gradient "| |\\  ||  __/|  __/| |_| || (_| | | ||  __/ | | "
-print_gradient "|_| \\_| \\___| \\___||____/  \\__,_| |_||_|   |___|"
+print_light_blue " _   _              ____           _  ____  ___ "
+print_light_blue "| \\ | |  ___   ___ |  _ \\   __ _  (_)|  _ \\|_ _|"
+print_light_blue "|  \\| | / _ \\ / _ \\| | | | / _\` | | || |_) || | "
+print_light_blue "| |\\  ||  __/|  __/| |_| || (_| | | ||  __/ | | "
+print_light_blue "|_| \\_| \\___| \\___||____/  \\__,_| |_||_|   |___|"
 echo
 
 echo -n "Loading"
