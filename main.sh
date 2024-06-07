@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-light_blue='\033[1;34m'
+orange='\033[0;33m'
 reset='\033[0m'
 
 # Function to print text in light blue color
