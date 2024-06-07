@@ -14,7 +14,7 @@ print_orange() {
 # function for application loader
 function load {
   for i in {1..57}; do
-    echo -n "."
+    echo -en "."
     sleep 0.1
   done
   echo -e "${green}100%${reset}\n"
@@ -31,7 +31,7 @@ print_orange "╚═╝  ╚═══╝╚══════╝ ╚════
 echo
 echo -e "\n"
 
-echo -n "${green}Loading${reset}"
+echo -en "${green}Loading${reset}"
 load
 
 export file_path="Students-list_1023.txt"
@@ -67,7 +67,7 @@ function register {
       printf "| %-25s | %-26s | %-36s |\n" "$id" "$age" "$email" >> $file_path
       printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
       # loading message
-      echo -n "${green}opening preview loading${reset} ";
+      echo -en "${green}opening preview loading${reset} ";
       load
       # end of loading
       cat $file_path
@@ -212,7 +212,7 @@ function delete_student {
 
 #------------------------function to save in new file ------------------------------
 function email_save {
-    echo -n "${green}Saving Emails in ASC${reset}"
+    echo -en "${green}Saving Emails in ASC${reset}"
     sleep 0.6
     clear
     ./select-emails.sh
@@ -223,7 +223,7 @@ emails='student-emails.txt'
 #------------------------function to view emails in ASC order-----------------------
 function view_email {
     # Loading message
-    echo -n "${green}Opening Emails preview in ASC Order${reset}"
+    echo -en "${green}Opening Emails preview in ASC Order${reset}"
     load
     # End of loading
     cat "$emails"
@@ -235,12 +235,12 @@ function back_up {
     read -p "Are you sure you want to backup your data? (Y or N) If you backup this data, everything will be backed up and you won't be able to run this program unless you go to the online server or backup directory: " opt
 
     if [ "$opt" == 'Y' ] || [ "$opt" == 'y' ]; then
-        echo -n "Opening Backup"
+        echo -en "Opening Backup"
         load
         ./move-to-directory.sh
     else
         echo "$opt"
-        echo -n "Returning to home"
+        echo -en "Returning to home"
         load
         ./main.sh
     fi
@@ -249,7 +249,7 @@ function back_up {
 #------------------------function to exit program---------------
 function exit_main {
     # Send message for closing app
-    echo -n "${green}Closing App. Please wait for a few seconds to finish...${reset}"
+    echo -en "${green}Closing App. Please wait for a few seconds to finish...${reset}"
     sleep 0.6
     clear
     # Kill the main process
