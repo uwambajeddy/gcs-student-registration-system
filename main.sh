@@ -13,11 +13,11 @@ print_orange() {
 
 # function for application loader
 function load {
-  for i in {1..57}; do
+  for i in {1..10}; do
     echo -en "."
     sleep 0.1
   done
-  echo -e "${green}100%${reset}\n"
+  echo -e "100%\n"
 } 
 
 
@@ -31,7 +31,7 @@ print_orange "╚═╝  ╚═══╝╚══════╝ ╚════
 echo
 echo -e "\n"
 
-echo -en "${green}Loading${reset}"
+echo -en "Loading"
 load
 
 export file_path="Students-list_1023.txt"
