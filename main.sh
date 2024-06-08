@@ -13,9 +13,9 @@ print_orange() {
 
 # function for application loader
 function load {
-  for i in {1..10}; do
+  for i in {1..57}; do
     echo -en "."
-    sleep 0.1
+    sleep 0.001
   done
   echo -e "100%\n"
 } 
