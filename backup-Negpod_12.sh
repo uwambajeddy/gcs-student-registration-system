@@ -44,7 +44,7 @@ rsync -avz --delete -e "sshpass -p $password ssh -o StrictHostKeyChecking=no" "$
 
 echo -n "Backup completed. Ending Program ."
 load
-echo -e "\n\n **************************** Thank You!!*****************************"
+echo -e "\n\n *********************************************************************************"
 
 echo -e " /$$$$$$$$ /$$                           /$$                                          "
 echo -e "|__  $$__/| $$                          | $$                                          "
