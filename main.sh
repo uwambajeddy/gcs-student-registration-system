@@ -15,7 +15,7 @@ print_orange() {
 function load {
   for i in {1..57}; do
     echo -en "."
-    sleep 0.02
+    sleep 0.05
   done
   echo -e "100%\n"
 } 
@@ -162,7 +162,7 @@ function update_student {
         update_student
       fi
     else
-      echo "${red}Error: Student Id Doesn't exist: $id${reset}"
+      echo -e "${red}Error: Student Id Doesn't exist: $id${reset}"
       echo -e "\n\n **** returning to Home **** \n\n"
       load
       # end of loading
@@ -170,7 +170,7 @@ function update_student {
       ./main.sh
     fi
   else
-    echo "${red}Error: File not found : $file_path${reset}"
+    echo -e "${red}Error: File not found : $file_path${reset}"
     echo -e "\n\n **** returning to Home **** \n\n"
     load
     # end of loading
@@ -311,7 +311,7 @@ case $choice in
         exit_main
         ;;
     *)
-        echo "${red}Invalid choice. Please try again.${reset}"
+        echo -e "${red}Invalid choice. Please try again.${reset}"
         ./main.sh
         ;;
 esac
