@@ -15,7 +15,7 @@ print_orange() {
 function load {
   for i in {1..57}; do
     echo -en "."
-    sleep 0.03
+    sleep 0.02
   done
   echo -e "100%\n"
 } 
