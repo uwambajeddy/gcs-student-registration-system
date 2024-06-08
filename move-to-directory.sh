@@ -10,7 +10,7 @@ function load {
 }
 
 # Check if the directory exists---------------------
-folder="negpod_0-q1"
+folder="negpod_12-q1"
 
 # File initialization---------------
 s_email='select-emails.sh'
