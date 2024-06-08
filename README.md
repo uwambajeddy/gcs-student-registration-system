@@ -26,8 +26,8 @@ The development of this application was a group effort, with each member contrib
 3. **Edit Existing Student**: Didier Nsengiyumva (7+ commits)
 4. **Delete Student**: Lee Tonny Muvunyi (7+ commits)
 5. **Save Student Emails Sorted in ASC**: Umuhoza Justine (7+ commits)
-6. **View Student Emails Sorted in ASC**: Eddy Uwambaje (7+ commits)
-7. **Backup Your Data**: Milka Keza Isingizwe (7+ commits)
+6. **View Student Emails Sorted in ASC**: Milka Keza Isingizwe  (7+ commits)
+7. **Backup Your Data**: Eddy Uwambaje (7+ commits)
 8. **Exit The Program**: Lee Tonny Muvunyi (7+ commits)
 
 ## Contributors
