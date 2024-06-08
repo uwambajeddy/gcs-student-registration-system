@@ -71,9 +71,8 @@ function register {
       load
       # end of loading
       cat $file_path
-      echo -e "\n\n returning to Home\n\n"
-      load
-      # end of loading
+      echo -e "\n\n **** Press any key to return home **** \n\n"
+      read -n 1
       clear
       ./main.sh
     fi
@@ -98,17 +97,15 @@ function view_student {
       ./main.sh
     else
       echo "${red}No Student Found. Try Adding New Students.${reset}"
-      echo -e "\n\n **** returning to Home **** \n\n"
-      # call the load function
-      load
-      # clear everything and restart the app for user
+      echo -e "\n\n **** Press any key to return home **** \n\n"
+      read -n 1
       clear
       ./main.sh
     fi
   else
     echo "${red}File Not Found.${reset}"
-    echo -e "\n\n **** returning to Home **** \n\n"
-    load
+    echo -e "\n\n **** Press any key to return home **** \n\n"
+    read -n 1
     clear
     ./main.sh
   fi
@@ -143,9 +140,8 @@ function update_student {
         
         if [ "$found" = false ]; then
           echo "${red}Student ID: $id not found in the file.${reset}"
-          echo -e "\n\n **** returning to Home **** \n\n"
-          load
-          # end of loading
+          echo -e "\n\n **** Press any key to return home **** \n\n"
+          read -n 1
           clear
           ./main.sh
         else
@@ -163,17 +159,15 @@ function update_student {
       fi
     else
       echo -e "${red}Error: Student Id Doesn't exist: $id${reset}"
-      echo -e "\n\n **** returning to Home **** \n\n"
-      load
-      # end of loading
+      echo -e "\n\n **** Press any key to return home **** \n\n"
+      read -n 1
       clear
       ./main.sh
     fi
   else
     echo -e "${red}Error: File not found : $file_path${reset}"
-    echo -e "\n\n **** returning to Home **** \n\n"
-    load
-    # end of loading
+    echo -e "\n\n **** Press any key to return home **** \n\n"
+    read -n 1
     clear
     ./main.sh
   fi
@@ -202,11 +196,10 @@ function delete_student {
         view_student
     else
          echo "${red}Error: File not found : $file_path${reset}"
-        echo -e "\n\n **** returning to Home ****\n\n"
-        load
-        # End of loading 
-        clear
-        ./main.sh
+         echo -e "\n\n **** Press any key to return home **** \n\n"
+         read -n 1
+         clear
+         ./main.sh
     fi
 }
 
@@ -240,8 +233,9 @@ function back_up {
         ./move-to-directory.sh
     else
         echo "$opt"
-        echo -en "Returning to home"
-        load
+        echo -e "\n\n **** Press any key to return home **** \n\n"
+        read -n 1
+        clear
         ./main.sh
     fi
 }
@@ -312,6 +306,9 @@ case $choice in
         ;;
     *)
         echo -e "${red}Invalid choice. Please try again.${reset}"
+        echo -e "\n\n **** Press any key to return home **** \n\n"
+        read -n 1
+        clear
         ./main.sh
         ;;
 esac
