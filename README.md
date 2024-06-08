@@ -1,4 +1,4 @@
-# NegPod 12 - Student Management App
+# NegPod-12 Student Management App
 
 ## Overview
 
