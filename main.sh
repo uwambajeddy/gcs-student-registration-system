@@ -243,20 +243,7 @@ function back_up {
 #------------------------function to exit program---------------
 function exit_main {
     # Send message for closing app
-    echo -en "${green}Closing App. Please wait for a few seconds to finish...${reset}"
-    echo -e "\n\n *********************************************************************************"
-    echo -e " /$$$$$$$$ /$$                           /$$                                          "
-    echo -e "|__  $$__/| $$                          | $$                                          "
-    echo -e "   | $$   | $$$$$$$   /$$$$$$  /$$$$$$$ | $$   /$$       /$$   /$$  /$$$$$$  /$$   /$$"
-    echo -e "   | $$   | $$__  $$ |____  $$| $$__  $$| $$  /$$/      | $$  | $$ /$$__  $$| $$  | $$"
-    echo -e "   | $$   | $$  \ $$  /$$$$$$$| $$  \ $$| $$$$$$/       | $$  | $$| $$  \ $$| $$  | $$"
-    echo -e "   | $$   | $$  | $$ /$$__  $$| $$  | $$| $$_  $$       | $$  | $$| $$  | $$| $$  | $$"
-    echo -e "   | $$   | $$  | $$|  $$$$$$$| $$  | $$| $$ \  $$      |  $$$$$$$|  $$$$$$/|  $$$$$$/"
-    echo -e "   |__/   |__/  |__/ \_______/|__/  |__/|__/  \__/       \____  $$ \______/  \______/ "
-    echo -e "                                                         /$$  | $$                    "
-    echo -e "                                                        |  $$$$$$/                    "
-    echo -e "                                                         \______/                     "
-
+    echo -en "${green}\n\n\nClosing App. Please wait for a few seconds to finish...\n\n\n${reset}"
     sleep 0.6
     clear
     # Kill the main process
