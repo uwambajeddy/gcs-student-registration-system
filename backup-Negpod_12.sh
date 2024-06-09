@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Function for displaying loading progress
-function load {
+function loader {
     for i in {1..10}; do
         echo -n "."
         sleep 0.1
@@ -43,5 +43,5 @@ sshpass -p "$password" ssh -o StrictHostKeyChecking=no "$username@$host" "mkdir 
 rsync -avz --delete -e "sshpass -p $password ssh -o StrictHostKeyChecking=no" "$source_directory" "$username@$host:$dest"
 
 echo -n "Backup completed. Ending Program ."
-load
+loader
 echo -e "\n\n **************************** Thank You!!*****************************"

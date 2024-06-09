@@ -21,7 +21,7 @@ This is a Bash script application designed to manage a list of students. It allo
 The development of this application was a group effort, with each member contributing to different aspects of the project:
 
 0. **Setup**: All team members participated in the initial setup of the project.
-1. **Add New Student & Load Function**: Birasa Laura Divine (7+ commits)
+1. **Add New Student & Loader Function**: Birasa Laura Divine (7+ commits)
 2. **View All Students**: Bonaparte Avellin Uteramahoro (7+ commits)
 3. **Edit Existing Student**: Didier Nsengiyumva (7+ commits)
 4. **Delete Student**: Lee Tonny Muvunyi (7+ commits)

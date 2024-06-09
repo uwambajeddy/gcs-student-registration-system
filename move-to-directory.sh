@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Function for program loader------------------------
-function load {
+function loader {
     for i in {1..10}; do
         echo -n "."
         sleep 0.1
@@ -23,25 +23,25 @@ file_save='student-emails.txt'
 if [ -f "$s_email" ] && [ -f "$main" ] && [ -f "$file_path" ] && [ -f "$file_save" ]; then
     if [ -d "$folder" ]; then
         echo -n "Moving Files "
-        load
+        loader
         mv -f "$main" "$s_email" "$file_save" "$file_path" "$folder"
         echo -n "Backing up data to alu-cod.online "
-        load
+        loader
         ./backup-Negpod_12.sh
     else
         echo -n "Creating directory "
-        load
+        loader
         mkdir "$folder"
 
         echo -n "Folder Created Successfully!! Moving Files "
-        load
+        loader
         mv -f "$main" "$s_email" "$file_save" "$file_path" "$folder"
         echo -n "Backing up data to alu-cod.online "
-        load
+        loader
         ./backup-Negpod_12.sh
     fi
 else
     echo "Error: Your Files Don't Exist"
     echo -n "Ending Programming "
-    load
+    loader
 fi

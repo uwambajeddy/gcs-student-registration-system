@@ -12,7 +12,7 @@ print_orange() {
 }
 
 # function for application loader
-function load {
+function loader {
   for i in {1..57}; do
     echo -en "."
     sleep 0.02
@@ -32,7 +32,7 @@ echo
 echo -e "\n"
 
 echo -en "Loading"
-load
+loader
 
 export file_path="Students-list_1023.txt"
 
@@ -68,7 +68,7 @@ function register {
       printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
       # loading message
       echo -en "${green}opening preview loading${reset} ";
-      load
+      loader
       # end of loading
       cat $file_path
       echo -e "\n\n **** Press any key to return home **** \n\n"
@@ -148,7 +148,7 @@ function update_student {
           mv "$temp_file" "$file_path"
           echo "${green}Successfully Edited Student with ID: $id${reset}"
           echo -e "\n\n **** Preparing Your Preview **** \n\n"
-          load
+          loader
           # end of loading
           clear
           view_student
@@ -190,7 +190,7 @@ function delete_student {
         echo "${green}Deleted row with Student ID: $id${reset}"
 
         echo -e "\n\n **** Preparing Your Preview **** \n\n"
-        load
+        loader
         # End of loading 
         clear
         view_student
@@ -217,7 +217,7 @@ emails='student-emails.txt'
 function view_email {
     # Loading message
     echo -en "${green}Opening Emails preview in ASC Order${reset}"
-    load
+    loader
     # End of loading
     cat "$emails"
     ./main.sh
@@ -229,7 +229,7 @@ function back_up {
 
     if [ "$opt" == 'Y' ] || [ "$opt" == 'y' ]; then
         echo -en "Opening Backup"
-        load
+        loader
         ./move-to-directory.sh
     else
         echo "$opt"
