@@ -49,7 +49,7 @@ function register {
       echo "adding student"
     else
       printf "+----------------------------+----------------------------+-----------------------------------+\n" > $file_path
-      printf "| %-26s | %-26s | %-34s |\n" "student Id" "Age" "Email" >> $file_path
+      printf "| %-26s | %-26s | %-33s |\n" "student Id" "Age" "Email" >> $file_path
       printf "+----------------------------+----------------------------+-----------------------------------+\n" >> $file_path
       echo "Creating Table and Adding Data"
     fi
@@ -64,7 +64,7 @@ function register {
       ./main.sh
     else
       # Print table rows
-      printf "| %-26s | %-26s | %-34s |\n" "$id" "$age" "$email" >> $file_path
+      printf "| %-26s | %-26s | %-33s |\n" "$id" "$age" "$email" >> $file_path
       printf "+----------------------------+----------------------------+-----------------------------------+\n" >> $file_path
       # loading message
       echo -en "${green}opening preview loading${reset} ";
@@ -131,7 +131,7 @@ function update_student {
         found=false
         while IFS= read -r line; do
           if echo "$line" | grep -q -E "^\|[[:space:]]*$id[[:space:]]*\|"; then
-            printf "| %-26s | %-26s | %-34s |\n" "$id" "$age" "$email" >> "$temp_file"
+            printf "| %-26s | %-26s | %-33s |\n" "$id" "$age" "$email" >> "$temp_file"
             found=true
           else
             echo "$line" >> "$temp_file"
