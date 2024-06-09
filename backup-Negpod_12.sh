@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Load environment variables from .env file
+source .env
+
 # Function for displaying loading progress
 function loader {
     for i in {1..10}; do
@@ -31,16 +34,13 @@ check_and_install sshpass
 
 # Configuration for variables
 source_directory="negpod_12-q1"
-username="c48ab8378e52"
-host="c48ab8378e52.70681577.alu-cod.online"
-password="07b7a900c3039680b412"
 dest="summative/1023-2024j"
 
 # Create the destination directory on the remote server if it doesn't exist
-sshpass -p "$password" ssh -o StrictHostKeyChecking=no "$username@$host" "mkdir -p /summative/1023-2024j"
+sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no "$USERNAME@$HOST" "mkdir -p /summative/1023-2024j"
 
 # Use rsync to backup the directory to the alu-cod.online server
-rsync -avz --delete -e "sshpass -p $password ssh -o StrictHostKeyChecking=no" "$source_directory" "$username@$host:$dest"
+rsync -avz --delete -e "sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no" "$source_directory" "$USERNAME@$HOST:$dest"
 
 echo -n "Backup completed. Ending Program ."
 loader
