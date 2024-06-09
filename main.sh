@@ -48,9 +48,9 @@ function register {
     if [ -e "$file_path" ]; then
       echo "adding student"
     else
-      printf "+----------------------------+----------------------------+-------------------------------------\n" > $file_path
+      printf "+----------------------------+----------------------------+-----------------------------------+\n" > $file_path
       printf "| %-27s | %-26s | %-34s |\n" "student Id" "Age" "Email" >> $file_path
-      printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
+      printf "+----------------------------+----------------------------+-----------------------------------+\n" >> $file_path
       echo "Creating Table and Adding Data"
     fi
     sleep 1
@@ -65,7 +65,7 @@ function register {
     else
       # Print table rows
       printf "| %-27s | %-26s | %-34s |\n" "$id" "$age" "$email" >> $file_path
-      printf "+----------------------------+----------------------------+-------------------------------------\n" >> $file_path
+      printf "+----------------------------+----------------------------+-----------------------------------+\n" >> $file_path
       # loading message
       echo -en "${green}opening preview loading${reset} ";
       loader
