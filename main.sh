@@ -252,7 +252,7 @@ function exit_main {
 
 # App menu
 echo -e "\n\n*******************************************************"
-print_orange "************* Student Management System ***************"
+print_orange "************* Welcome to our app ***************"
 echo -e "*******************************************************\n"
 
 echo -e "What would you like to do today?\n"
